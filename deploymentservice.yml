@@ -36,22 +36,3 @@ spec:
     targetPort: 3000
     nodePort: 31110
 
----
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nodeapp-ingress
-spec:
-  rules:
-  - host: example.com  # Replace with your domain or hostname
-    http:
-      paths:
-      - pathType: Prefix
-        path: /app
-        backend:
-          service:
-            name: nodeapp-service
-            port:
-              number: 5000
-
